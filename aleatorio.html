@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Aleatorio</title>
+</head>
+<body>
+	
+<script type="text/javascript">
+	
+	var singers = [
+	"Jeison",
+	"Ana",
+	"Sandra",
+	"Jenny",
+	"Paola"
+	];
+
+    var j,k;
+	
+    for (i = singers.length; i; i--) {
+        j = Math.floor(Math.random() * i);		
+        k = singers[i - 1];
+        singers[i - 1] = singers[j];
+        singers[j] = k;
+		console.log(i, j, k);
+    }
+
+	document.write("<p>Aleatorios : " + singers + "</p>");
+	
+	
+	var song = [
+		"Algo está cayendo aqui - José L. Reyes (G)", 
+		"Asi como David danzaba - Ebenezer (Am)", 
+		"Creo en ti - Julio Melgar (Bm)",  
+		"Libre soy - David Scarpeta (D)", 
+		"Revelación - Danilo Montero y Kari Jobe (E)", 
+		"Te doy gloria - En espiritu y en verdad (C)", 
+		"La casa de Dios - Danilo Montero (D)", 
+		"Con mi Dios - Marcos Witt (E)", 
+		"La única razón / Todopoderoso - Rojo (Bm)", 
+		"Cuan grande es Dios - En espiritu y en verdad (C)", 
+		"Gracias - Marcos Witt (Gm)", 
+		"Hossana - Hillsong (Cm)", 
+		"Vine a adorarte - Marcela Gandara ft. Abel Zavala (D)", 
+		"Aquí estoy - Jaime Murrel (A)", 
+		"Señor llevame a tus atrios - Petra (Em)", 
+		"Él me levantará - Inspiración / Tony Pérez (D)", 
+		"Dame de beber - Marco Barrientos (D)", 
+		"Haz llover - José L.Reyes (Am)", 
+		"No hay lugar más alto - Miel San Marcos (A)",
+		"Fuente de vida - Segab (Dm)",
+		"Vivir para ti - Segab (G)",
+		"Amor incondicional - Segab (G)"
+	];
+	
+	var lesongs = song.length;
+	console.log("Tenemos " + lesongs + " canciones");
+
+	var lesingers = singers.length;
+	console.log("Son " + lesingers + " vocalistas");
+
+	function aleatorio(min, max) {
+	  return Math.floor(Math.random() * (max - min) + min);
+	}
+
+
+	document.write("<b>Vocales:</b> <br>");
+		
+	for (var i=0; i<2; i++){
+		var name = aleatorio(0, lesingers);
+		var names = singers[name];
+		document.write(names + " <br>");
+	}
+		
+	document.write("<br><b>Repertorio: </b><br>");
+
+	for (var i=0; i<6; i++){
+		var nmbr = aleatorio(0, lesongs);
+		var num = song[nmbr];
+		document.write(num + " <br>");
+	}
+		
+	document.write("<p><button onclick='location.reload();'> CAMBIAR </button></p>");
+
+	document.title = names;
+	
+</script>
+	
+	
+</body>
+</html>
